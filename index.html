@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Helena Pérez Puente is a computational linguist and researcher at CiTIUS, working on natural language processing, language technologies and multilingual resources.">
+  <meta name="theme-color" content="#f7f8f6">
+  <meta property="og:title" content="Helena Pérez Puente | Computational Linguist">
+  <meta property="og:description" content="Research in computational linguistics, natural language processing and multilingual language technologies.">
+  <meta property="og:type" content="website">
+  <title>Helena Pérez Puente | Computational Linguist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8f6;
+      --paper: #ffffff;
+      --ink: #18231e;
+      --muted: #65736b;
+      --line: #e1e8e2;
+      --accent: #236b52;
+      --accent-soft: #e7f1eb;
+      --max: 1000px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font: 400 16px/1.75 "DM Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: #174b3d; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(247,248,246,.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .wrap { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--ink); font: 800 15px "Manrope", sans-serif; text-decoration: none; white-space: nowrap; }
+    nav ul { display: flex; align-items: center; gap: clamp(12px, 2.5vw, 26px); list-style: none; overflow-x: auto; }
+    nav a:not(.brand) { color: var(--muted); text-decoration: none; font-size: 14px; white-space: nowrap; padding: 8px 0; border-bottom: 2px solid transparent; }
+    nav a.on, nav a:not(.brand):hover { color: var(--ink); border-color: var(--accent); }
+    header { padding: 88px 0 78px; }
+    ::selection { background: #d8e9df; color: var(--ink); }
+    a:focus-visible { outline: 3px solid #8ab9a1; outline-offset: 3px; border-radius: 3px; }
+    /* Header layout with photo on the right */
+    #top .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .intro {
+      max-width: 760px;
+    }
+
+    .photo {
+      width: 220px;
+      justify-self: end;
+      margin-top: 18px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center 35%;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(24, 50, 37, .12);
+    }
+
+    /* Mobile layout */
+    @media (max-width: 680px) {
+      #top .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      #top .photo {
+        grid-row: 1;
+        justify-self: start;
+        width: 145px;
+        margin-top: 0;
+      }
+
+      #top .photo img {
+        height: 145px;
+      }
+    }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; line-height: 1.2; }
+    h1 { font-size: clamp(42px, 7vw, 68px); letter-spacing: -.045em; margin-bottom: 12px; }
+    .role { font-size: clamp(19px, 2.5vw, 23px); color: var(--muted); margin-bottom: 22px; }
+    .summary { max-width: 690px; font-size: 18px; line-height: 1.75; }
+    .topics { display: flex; flex-wrap: wrap; gap: 9px; margin: 26px 0 30px; list-style: none; }
+    .topics li { background: var(--accent-soft); color: #245744; padding: 6px 13px; border-radius: 99px; font-size: 13px; font-weight: 600; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-block; padding: 10px 17px; border-radius: 7px; background: var(--accent); color: white; text-decoration: none; font-weight: 700; font-size: 14px; }
+    .button.secondary { background: transparent; color: var(--accent); border: 1px solid #b8cec3; }
+    main section { border-top: 1px solid var(--line); padding: 64px 0; }
+    .entry { transition: background .18s ease; }
+    .entry p { font-size: 15px; }
+    .button { box-shadow: 0 5px 14px rgba(35,107,82,.12); transition: transform .18s ease, background .18s ease; }
+    .button:hover { color: #fff; background: #174d3a; transform: translateY(-1px); }
+    .button.secondary { box-shadow: none; }
+    .section-kicker { color: var(--muted); font-size: 14px; margin-top: -18px; margin-bottom: 18px; }
+    h2 { font-size: 30px; letter-spacing: -.025em; margin-bottom: 28px; }
+    .entry { display: grid; grid-template-columns: 145px 1fr; gap: 10px 30px; padding: 22px 0; }
+    .entry + .entry { border-top: 1px solid var(--line); }
+    .date { color: var(--muted); font-size: 14px; padding-top: 3px; }
+    h3 { font-size: 18px; margin-bottom: 5px; }
+    .institution { color: var(--muted); font-size: 15px; }
+    .entry p { margin-top: 8px; max-width: 700px; }
+    .note { color: var(--muted); font-size: 14px; }
+    .paper-title { font-weight: 700; }
+    .award-list .entry { padding: 16px 0; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 38px; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      nav .wrap { align-items: flex-start; flex-direction: column; padding: 12px 0 8px; gap: 4px; }
+      nav ul { width: 100%; gap: 19px; }
+      header { padding: 66px 0 55px; }
+      main section { padding: 46px 0; }
+      .entry { grid-template-columns: 1fr; gap: 4px; }
+      .date { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <div class="wrap">
+      <a class="brand" href="#top">Helena Pérez Puente</a>
+      <ul>
+        <li><a href="#news">News</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#awards">Awards</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Computational Linguistics · Natural Language Processing</p>
+      <h1>Helena Pérez Puente</h1>
+      <p class="role">PhD student in Computational Linguistics at CiTIUS (USC)</p>
+
+      <p class="summary">
+        I am a computational linguist working at the intersection of language and artificial intelligence. My research focuses on language acquisition in small language models, with particular interest in low-resource languages and multilingualism.
+      </p>
+
+      <ul class="topics" aria-label="Research interests">
+        <li>Natural Language Processing</li>
+        <li>Language Acquisition</li>
+        <li>Interpretability</li>
+        <li>Psycholinguistics</li>
+        <li>Low-Resource Languages</li>
+      </ul>
+
+      <div class="links">
+        <a class="button" href="#publications">View publications</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/helena-p%C3%A9rez-puente-1a63772b1/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button secondary" href="https://citius.gal/gl/team/helena-perez-puente/" target="_blank" rel="noopener">CiTIUS</a>
+        <a class="button secondary" href="https://orcid.org/0009-0005-6345-045X" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </div>
+
+    <div class="photo">
+      <img src="assets/img/HH.jpg" alt="Portrait of Helena Pérez Puente" loading="eager" decoding="async">
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section id="education">
+      <div class="wrap">
+        <h2>Education</h2>
+        <div class="entry">
+          <div class="date">2026 – 2030</div>
+          <div>
+            <h3>PhD in Linguistics</h3>
+            <div class="institution">CiTIUS, University of Santiago de Compostela (USC)</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">2024 – 2026</div>
+          <div>
+            <h3>Master's Degree in Language Analysis and Processing</h3>
+            <div class="institution">University of the Basque Country (UPV/EHU)</div>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">2020 – 2024</div>
+          <div>
+            <h3>Degree in Galician Language and Literature</h3>
+            <div class="institution">University of Santiago de Compostela (USC)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <h2>Experience</h2>
+        <div class="entry">
+          <div class="date">Apr 2026 – present</div>
+          <div>
+            <h3>Researcher</h3>
+            <div class="institution">CiTIUS – Singular Research Centre in Intelligent Technologies, University of Santiago de Compostela</div>
+            <p>Member of the LINNA project team, which investigates linguistically grounded inductive biases for neural language modelling.</p>
+            <p><a href="https://citius.gal/gl/team/helena-perez-puente/" target="_blank" rel="noopener">CiTIUS profile</a></p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">Jun 2025 – Jul 2025</div>
+          <div>
+            <h3>Computational Linguistics Intern</h3>
+            <div class="institution">Imaxin|Software</div>
+            <p>Master's Degree Internship.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">Jul 2024</div>
+          <div>
+            <h3>Research Intern</h3>
+            <div class="institution">CiTIUS – Singular Research Centre in Intelligent Technologies, University of Santiago de Compostela</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="wrap">
+        <h2>Publications</h2>
+        <div class="entry">
+          <div class="date">2026 · Journal article</div>
+          <div>
+            <h3 class="paper-title">Named Entity Recognition Across Datasets and Domains: Resources and Models for Galician</h3>
+            <div class="institution">Albina Sarymsakova, Ettore Mariotti, Helena Pérez Puente, Marcos Garcia ·  Natural Language Processing, Oct 2026</div>
+            <p>Research developed during my summer intership at CiTIUS in 2024.</p>
+            <p><a href="https://www.cambridge.org/core/journals/natural-language-processing/article/named-entity-recognition-across-datasets-and-domains-resources-and-models-for-galician/338777516887A6B5542BD534E1379D44" target="_blank" rel="noopener">Read the paper</a></p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">2026 · Conference paper</div>
+          <div>
+            <h3 class="paper-title">Gal-SummEval: Meta-Evaluation of Abstractive Summarization in Galician</h3>
+            <div class="institution">Helena Pérez Puente, Jeremy Barnes and Naiara Pérez · SEPLN 2026</div>
+            <p>Research developed from the Master's thesis, presented at the XLII International Conference of the Spanish Society for Natural Language Processing (SEPLN) and published in the SEPLN journal.</p>
+            <p><a href="http://journal.sepln.org/sepln/ojs/ojs/index.php/pln/article/view/6875" target="_blank" rel="noopener">Read the paper</a></p>
+          </div>
+          </div>
+        <div class="entry">
+          <div class="date">2026 · Conference paper</div>
+          <div>
+            <h3 class="paper-title">The MultiplEYE Text Corpus: Towards a Diverse and Ever-Expanding Multilingual Text Corpus</h3>
+            <div class="institution">Ramunė Kasperė, Anna Bondar, Sergiu Nisioi, et al., including Helena Pérez · <em>Proceedings of LREC 2026</em>, 6706–6721</div>
+            <p>Introduces a large-scale, document-level multilingual corpus with paragraph-level alignment across 39 languages, designed to support cross-linguistic research on reading and language processing.</p>
+            <p><a href="https://doi.org/10.63317/42gkpf6a6x2x" target="_blank" rel="noopener">Read the paper</a></p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">2026 · Journal article</div>
+          <div>
+            <h3 class="paper-title">O procesamento da estrutura sintáctica nos modelos de linguaxe neurais: a concordancia suxeito-verbo en galego e portugués</h3>
+            <div class="institution">Helena Pérez Puente · <em>Linguamática</em>, 17(2), 119–128</div>
+            <p>Examines subject–verb agreement in Galician and Portuguese, comparing how neural language models and human speakers process syntactic structure.</p>
+            <p><a href="https://doi.org/10.21814/lm.17.2.498" target="_blank" rel="noopener">Read the paper</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" class="award-list">
+      <div class="wrap">
+        <h2>Awards</h2>
+        <div class="entry">
+          <div class="date">2025</div>
+          <div><h3>Premio Fin de Carreira</h3><div class="institution">Xunta de Galicia</div></div>
+        </div>
+        <div class="entry">
+          <div class="date">2025</div>
+          <div><h3>Premio Extraordinario do Grao en Lingua e Literatura Galegas</h3><div class="institution">Universidade de Santiago de Compostela</div></div>
+        </div>
+        <div class="entry">
+          <div class="date">2024</div>
+          <div><h3>Premio Ángela Ruiz Robles á Excelencia Académica</h3><div class="institution">Xunta de Galicia</div></div>
+        </div>
+        <div class="entry">
+          <div class="date">2023</div>
+          <div><h3>Premio Ángela Ruiz Robles á Excelencia Académica</h3><div class="institution">Xunta de Galicia</div></div>
+        </div>
+        <div class="entry">
+          <div class="date">2022</div>
+          <div><h3>Premio de Excelencia Académica de Grao</h3><div class="institution">Xunta de Galicia</div></div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="wrap">
+        <h2>News</h2>
+        <div class="entry">
+          <div class="date">September 2026</div>
+          <div>
+            <h3>Presented Gal-SummEval at SEPLN 2026</h3>
+            <p>Presented research on the meta-evaluation of abstractive summarization in Galician at the XLII International Conference of the Spanish Society for Natural Language Processing in León.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">September 2026</div>
+          <div>
+            <h3>LINNA project poster at SEPLN 2026</h3>
+            <p>Participated in the poster session presenting work connected to the LINNA project at CiTIUS.</p>
+            <p><a href="https://citius.gal/research/projects/para-un-vies-indutivo-de-base-linguistica-no-modelado-neuronal-da-linguaxe/" target="_blank" rel="noopener">Learn about LINNA</a></p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="date">January 2026</div>
+          <div>
+            <h3>First article published in Linguamática</h3>
+            <p>Your article on subject–verb agreement in Galician and Portuguese neural language models was published in the journal's “New Perspectives” section.</p>
+            <p><a href="https://doi.org/10.21814/lm.17.2.498" target="_blank" rel="noopener">Read the article</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact & profiles</h2>
+        <p>For research enquiries and collaborations, find me through my institutional and academic profiles.</p>
+        <div class="links" style="margin-top:20px">
+          <a class="button" href="https://orcid.org/0009-0005-6345-045X" target="_blank" rel="noopener">ORCID</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/helena-p%C3%A9rez-puente-1a63772b1/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button secondary" href="https://citius.gal/gl/team/helena-perez-puente/" target="_blank" rel="noopener">CiTIUS profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Helena Pérez Puente</span>
+      <span><a href="https://www.linkedin.com/in/helena-p%C3%A9rez-puente-1a63772b1/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://citius.gal/en/" target="_blank" rel="noopener">CiTIUS</a></span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const links = [...document.querySelectorAll("nav ul a")];
+    const sections = [...document.querySelectorAll("main section")];
+    addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        if (scrollY >= section.offsetTop - 130) current = section.id;
+      });
+      links.forEach(link => link.classList.toggle("on", link.getAttribute("href") === "#" + current));
+    }, { passive: true });
+  </script>
+</body>
+</html>
